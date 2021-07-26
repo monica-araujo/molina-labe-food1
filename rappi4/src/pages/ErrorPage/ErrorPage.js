@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const AdressRegisterPage = () => {
+export const ErrorPage = () => {
     return (
         <div>
-            AdressRegisterPage
+         ErrorPage
         </div>
     )
 }
