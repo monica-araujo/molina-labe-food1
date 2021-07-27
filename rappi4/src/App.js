@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div >
       <GlobalStyle />
-      <Router />
+      <Router /> 
     </div>
   );
 }
