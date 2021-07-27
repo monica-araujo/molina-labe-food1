@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { Router } from './routes/Router';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './constants/theme';
 
 
 
@@ -7,15 +9,17 @@ const GlobalStyle = createGlobalStyle`
   *{
     padding: 0px;
     margin: 0px;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 `
 
 const App = () => {
   return (
     <div >
-      <GlobalStyle />
-      <Router /> 
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Router /> 
+      </ThemeProvider>
     </div>
   );
 }
