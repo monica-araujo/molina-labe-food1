@@ -1,11 +1,11 @@
 import React from 'react'
 import RecipeReviewCard from '../../components/CardSearch'
-import {DivForSearch} from './styled'
+import {DivForSearch, SearchText} from './styled'
 
 export const SearchPage = () => {
     return (
         <div>
-            <p>Busca</p> <br/>
+            <SearchText>Busca</SearchText> <br/>
 
             <DivForSearch>
                 <RecipeReviewCard/>
