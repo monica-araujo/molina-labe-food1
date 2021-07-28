@@ -1,5 +1,5 @@
 import {createTheme}  from '@material-ui/core/styles'
-import { primaryColor, secundaryColor, tertiaryColor} from './colors'
+import { primaryColor, secundaryColor, tertiaryColor, textColorRestarauntName} from './colors'
 
 const theme = createTheme ({
     typography: {
@@ -22,6 +22,10 @@ const theme = createTheme ({
         },
         text: {
             primary: '#000000'
+        },
+        quartenary: {
+            main: textColorRestarauntName,
+            contrastText: '#e97562'
         }
     }
 })
