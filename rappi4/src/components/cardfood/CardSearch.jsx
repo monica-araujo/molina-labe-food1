@@ -5,15 +5,15 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import {textColorRestarauntName} from '../constants/colors'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+    height: 35,
+    width: 345,
+    paddingTop: '35%', // 16:9
   },
 }));
 
@@ -29,7 +29,7 @@ export default function RecipeReviewCard() {
         title="Outback"
       />
       <CardContent>
-        <Typography variant="body2" color="textColorRestarauntName" component="p">
+        <Typography variant="body2" color="quartenary.main" component="p">
           Burguer Vila Madalena <br />
           50-60m Frete ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀R$6,00
         </Typography>
