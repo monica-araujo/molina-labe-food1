@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     font-family: 'Roboto', sans-serif;
   }
+  body {
+  height: 100%;
+  margin: 0;
+}
 `
 
 const App = () => {

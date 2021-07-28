@@ -10,7 +10,8 @@ import { ProfilePage } from '../pages/ProfilePage/ProfilePage'
 import { EditProfilePage } from '../pages/EditProfilePage/EditProfilePage'
 import { EditAdressPage } from '../pages/EditAdressPage/EditAdressPage'
 import { ErrorPage } from '../pages/ErrorPage/ErrorPage'
- 
+
+
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 
@@ -34,6 +35,7 @@ export const Router = () => {
 
                 <Route exact path={"/"}>
                     <FeedPage />
+                    
                 </Route>
 
                 <Route exact path={"/busca"}>
