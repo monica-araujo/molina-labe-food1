@@ -1,20 +1,19 @@
 import React from 'react'
 import RecipeReviewCard from '../../components/cardfood/CardSearch'
-import {DivForSearch, SearchText, DivSearchText, DivShadow, Line} from './styled'
+import {DivForSearch, SearchText, DivSearchText, DivShadow, BackButton, BackIcon} from './styled'
 import {SearchBar} from '../../components/barraBusca/SearchBar'
 import {TabMenu} from '../../components/menutab/TabMenu'
-
+import Back from "../../assets/back.png"
 
 export const SearchPage = () => {
     return (
         <div>  
             
             <DivSearchText> 
-                <SearchText>Buscar</SearchText>
+               <BackButton><BackIcon src={Back}/></BackButton>
+                <SearchText>Busca</SearchText>
             </DivSearchText> 
-            <br/>
-        <Line></Line>
-            <SearchBar/> <br/>
+            <SearchBar/> 
             <DivForSearch>
                 <DivShadow>
                 <RecipeReviewCard/>
