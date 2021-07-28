@@ -7,6 +7,24 @@ export const MainContainer = styled.div`
     width: 100vw;
     margin-top: 10vh;
 `
+export const BackIcon = styled.img`
+margin-right: 35.5vw;
+margin-left: 3.5vw;
+height: 2.9vh;
+margin-bottom: 1.5vh;
+`
+export const BackButton = styled.button`
+background-color: transparent;
+border: 0px;
+width: 14vw;
+margin-right: 30vw;
+`
+export const HeaderContainer = styled.div`
+    border-bottom: 1px solid #b8b8b8;
+    width: 100vw;
+    margin-bottom: 1vh;
+    display: flex;
+`
 export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
