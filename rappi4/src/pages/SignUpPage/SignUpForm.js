@@ -6,6 +6,7 @@ import {InputContainer} from './styled'
 import InputMask from 'react-input-mask'
 import useForm from '../../hooks/useForm'
 import { useHistory } from 'react-router-dom'
+import {signUp} from '../../services/user'
 
 export const SingUpForm = () => {
 
@@ -17,7 +18,7 @@ export const SingUpForm = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        //signUp(form, clear, history, setIsLoading)
+        signUp(form, clear, history, setIsLoading)
     }
 
     return (
@@ -25,7 +26,7 @@ export const SingUpForm = () => {
             <form onSubmit={onSubmitForm}>
                 <TextField
                     name={'name'}
-                    //value={form.name}
+                    value={form.name}
                     onChange={onChange}
                     label={'Nome'}
                     placeholder={'Nome e sobrenome'}
@@ -40,7 +41,7 @@ export const SingUpForm = () => {
                 />
                 <TextField
                     name={'email'}
-                    //value={form.email}
+                    value={form.email}
                     onChange={onChange}
                     label={'E-mail'}
                     placeholder={'email@email.com'}
@@ -55,7 +56,7 @@ export const SingUpForm = () => {
                 />
                 <InputMask
                     mask="999.999.999-99"
-                    //value={form.cpf}
+                    value={form.cpf}
                     onChange={onChange}
                 >
                     {() => <TextField
@@ -74,7 +75,7 @@ export const SingUpForm = () => {
                 </InputMask>
                 <TextField
                     name={'password'}
-                    //value={form.password}
+                    value={form.password}
                     onChange={onChange}
                     label={'Senha'}
                     placeholder={'Minímo 6 caracteres'}
@@ -87,9 +88,9 @@ export const SingUpForm = () => {
                         shrink: true
                     }}
                 />
-                <TextField
+                {/* <TextField
                     name={'password'}
-                    //value={form.password}
+                    value={form.password}
                     onChange={onChange}
                     label={'Confirmar'}
                     placeholder={'Confirme a senha anterior'}
@@ -100,8 +101,8 @@ export const SingUpForm = () => {
                     type={'password'}
                     InputLabelProps={{
                         shrink: true
-                    }}
-                />
+                    }} 
+                />*/}
                 <Button 
                     type={'submit'}
                     fullWidth

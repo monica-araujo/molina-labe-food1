@@ -5,6 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import {InputContainer} from './styled'
 import useForm from '../../hooks/useForm'
 import { useHistory } from 'react-router-dom'
+import {login} from '../../services/user'
 
 export const LoginForm = () => {
 
@@ -16,7 +17,7 @@ export const LoginForm = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        //login(form, clear, history, setIsLoading)
+        login(form, clear, history, setIsLoading)
     }
 
     return (
@@ -24,7 +25,7 @@ export const LoginForm = () => {
             <form onSubmit={onSubmitForm}>
                 <TextField
                     name={'email'}
-                    //value={form.email}
+                    value={form.email}
                     onChange={onChange}
                     label={'E-mail'}
                     placeholder={'email@email.com'}
@@ -39,7 +40,7 @@ export const LoginForm = () => {
                 />
                 <TextField
                     name={'password'}
-                    //value={form.password}
+                    value={form.password}
                     onChange={onChange}
                     label={'Senha'}
                     placeholder={'Minímo 6 caracteres'}
