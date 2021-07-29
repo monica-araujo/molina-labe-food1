@@ -6,6 +6,7 @@ import {TabMenu} from '../../components/menutab/TabMenu'
 import Back from "../../assets/back.png"
 import styled from 'styled-components'
 
+
 export const SearchPage = () => {
     return (
         <div>  
