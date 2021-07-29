@@ -4,6 +4,7 @@ import {DivForSearch, SearchText, DivSearchText, DivShadow, BackButton, BackIcon
 import {SearchBar} from '../../components/barraBusca/SearchBar'
 import {TabMenu} from '../../components/menutab/TabMenu'
 import Back from "../../assets/back.png"
+import styled from 'styled-components'
 
 export const SearchPage = () => {
     return (
