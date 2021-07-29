@@ -3,11 +3,11 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {InputContainer} from './styled'
+import InputMask from 'react-input-mask'
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment'
-import InputMask from 'react-input-mask'
 
-export const AdressRegisterForm = () => {
+export const EditAdressForm = () => {
 
     return (
         <InputContainer>

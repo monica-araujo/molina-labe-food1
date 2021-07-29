@@ -4,29 +4,16 @@ import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {InputContainer} from './styled'
 import InputMask from 'react-input-mask'
-import useForm from '../../hooks/useForm'
-import { useHistory } from 'react-router-dom'
 
-export const SingUpForm = () => {
-
-    const history = useHistory()
-
-    const [form, onChange, clear] = useForm({name: '', email: '', cpf: '', password: ''})
-
-    const [isLoading, setIsLoading] = useState(false)
-
-    const onSubmitForm = (event) => {
-        event.preventDefault()
-        //signUp(form, clear, history, setIsLoading)
-    }
+export const EditProfileForm = () => {
 
     return (
         <InputContainer>
-            <form onSubmit={onSubmitForm}>
+            <form /*onSubmit={onSubmitForm}*/>
                 <TextField
                     name={'name'}
-                    //value={form.name}
-                    onChange={onChange}
+                    //value={''}
+                    //onChange={onChange}
                     label={'Nome'}
                     placeholder={'Nome e sobrenome'}
                     variant={'outlined'}
@@ -40,8 +27,8 @@ export const SingUpForm = () => {
                 />
                 <TextField
                     name={'email'}
-                    //value={form.email}
-                    onChange={onChange}
+                    //value={''}
+                    //onChange={onChange}
                     label={'E-mail'}
                     placeholder={'email@email.com'}
                     variant={'outlined'}
@@ -55,8 +42,8 @@ export const SingUpForm = () => {
                 />
                 <InputMask
                     mask="999.999.999-99"
-                    //value={form.cpf}
-                    onChange={onChange}
+                    //value={form.password}
+                    //onChange={onChange}
                 >
                     {() => <TextField
                         name={'cpf'}
@@ -72,36 +59,6 @@ export const SingUpForm = () => {
                         }}
                     />}
                 </InputMask>
-                <TextField
-                    name={'password'}
-                    //value={form.password}
-                    onChange={onChange}
-                    label={'Senha'}
-                    placeholder={'Minímo 6 caracteres'}
-                    variant={'outlined'}
-                    fullWidth
-                    margin={'normal'}
-                    required
-                    type={'password'}
-                    InputLabelProps={{
-                        shrink: true
-                    }}
-                />
-                <TextField
-                    name={'password'}
-                    //value={form.password}
-                    onChange={onChange}
-                    label={'Confirmar'}
-                    placeholder={'Confirme a senha anterior'}
-                    variant={'outlined'}
-                    fullWidth
-                    margin={'normal'}
-                    required
-                    type={'password'}
-                    InputLabelProps={{
-                        shrink: true
-                    }}
-                />
                 <Button 
                     type={'submit'}
                     fullWidth
@@ -109,7 +66,7 @@ export const SingUpForm = () => {
                     color={'primary'}
                     margin={'normal'}
                 >
-                    {isLoading ? <CircularProgress color={'inherit'} size={24}/> : <>Criar</>}
+                    {/*{ ? <CircularProgress color={'inherit'} size={24}/> : <>*/}Salvar
                     </Button>
             </form>
         </InputContainer>
