@@ -3,8 +3,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {InputContainer} from './styled'
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputAdornment from '@material-ui/core/InputAdornment'
+import InputMask from 'react-input-mask'
 
 export const EditProfileForm = () => {
 
@@ -41,21 +40,25 @@ export const EditProfileForm = () => {
                         shrink: true
                     }}
                 />
-                <TextField
-                    name={'cpf'}
+                <InputMask
+                    mask="999.999.999-99"
                     //value={form.password}
                     //onChange={onChange}
-                    label={'CPF'}
-                    placeholder={'000.000.000-00'}
-                    variant={'outlined'}
-                    fullWidth
-                    margin={'normal'}
-                    required
-                    type={'text'}
-                    InputLabelProps={{
-                        shrink: true
-                    }}
-                />
+                >
+                    {() => <TextField
+                        name={'cpf'}
+                        label={'CPF'}
+                        placeholder={'000.000.000-00'}
+                        variant={'outlined'}
+                        fullWidth
+                        margin={'normal'}
+                        required
+                        type={'text'}
+                        InputLabelProps={{
+                            shrink: true
+                        }}
+                    />}
+                </InputMask>
                 <Button 
                     type={'submit'}
                     fullWidth
