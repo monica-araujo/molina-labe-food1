@@ -22,7 +22,6 @@ export const AdressRegisterForm = () => {
     const onSubmitForm = (event) => {
         event.preventDefault()
         addressSignUP(form, clear, history, setIsLoading)
-        console.log(form)
     }
 
     return (

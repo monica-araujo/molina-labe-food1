@@ -45,7 +45,9 @@ export const addressSignUP = (body, clear, history, setIsLoading) => {
     axios
     .put(`${BASE_URL}/address`, body, axiosConfig)
     .then((res) => {
-        console.log(res)
+        localStorage.setItem("token", res.data.token)
+        clear()
+        goToFeed(history)
     })
     .catch((err) => {
         console.log(err)
