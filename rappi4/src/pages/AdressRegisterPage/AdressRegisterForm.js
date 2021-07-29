@@ -5,6 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import {InputContainer} from './styled'
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment'
+import InputMask from 'react-input-mask'
 
 export const AdressRegisterForm = () => {
 
@@ -86,10 +87,13 @@ export const AdressRegisterForm = () => {
                         shrink: true
                     }}
                 />
-                <TextField
-                    name={'state'}
+                <InputMask
+                    mask="aa"
                     //value={form.password}
                     //onChange={onChange}
+                >
+                    {() => <TextField
+                    name={'state'}
                     label={'Estado'}
                     placeholder={'Estado'}
                     variant={'outlined'}
@@ -100,7 +104,9 @@ export const AdressRegisterForm = () => {
                     InputLabelProps={{
                         shrink: true
                     }}
-                />
+                    //inputProps={{ style: { textTransform: "uppercase" } }}
+                    />}
+                </InputMask>
                 <Button 
                     type={'submit'}
                     fullWidth
