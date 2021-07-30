@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom"
 import { goToFeed } from "../routes/coordinates"
 
 
-
 const useUnprotectedPage = () => {
     const history = useHistory()
     useLayoutEffect(() => {
