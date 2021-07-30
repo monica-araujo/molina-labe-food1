@@ -10,11 +10,11 @@ const theme = createTheme ({
     palette: {
         primary: {
             main: primaryColor,
-            contrastText: '#000000'
+            contrastText: '#000000',
         },
         secundary: {
             main: secundaryColor,
-            contrastText: '#000000'
+            contrastText: secundaryColor
         },
         tertiary: {
             main: tertiaryColor,

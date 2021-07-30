@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    margin-top: 6vh;
+    margin-top: 3vh;
 `
 
 export const HeaderContainer = styled.div`
