@@ -6,16 +6,31 @@ import {InputContainer} from './styled'
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment'
 import InputMask from 'react-input-mask'
+import { useHistory } from 'react-router-dom'
+import useForm from '../../hooks/useForm'
+import {addressSignUP} from '../../services/user'
+
 
 export const AdressRegisterForm = () => {
 
+    const history = useHistory()
+
+    const [form, onChange, clear] = useForm({street: '', number: null, neighbourhood: '', city: '', state: '', complement: ''})
+
+    const [isLoading, setIsLoading] = useState(false)
+
+    const onSubmitForm = (event) => {
+        event.preventDefault()
+        addressSignUP(form, clear, history, setIsLoading)
+    }
+
     return (
         <InputContainer>
-            <form /*onSubmit={onSubmitForm}*/>
+            <form onSubmit={onSubmitForm}>
                 <TextField
                     name={'street'}
-                    //value={''}
-                    //onChange={onChange}
+                    value={form.street}
+                    onChange={onChange}
                     label={'Logadouro'}
                     placeholder={'Rua / Av.'}
                     variant={'outlined'}
@@ -29,8 +44,8 @@ export const AdressRegisterForm = () => {
                 />
                 <TextField
                     name={'number'}
-                    //value={''}
-                    //onChange={onChange}
+                    value={form.number}
+                    onChange={onChange}
                     label={'Número'}
                     placeholder={'Número'}
                     variant={'outlined'}
@@ -44,14 +59,13 @@ export const AdressRegisterForm = () => {
                 />
                 <TextField
                     name={'complement'}
-                    //value={form.password}
-                    //onChange={onChange}
+                    value={form.complement}
+                    onChange={onChange}
                     label={'Complemento'}
                     placeholder={'Apto / Bloco'}
                     variant={'outlined'}
                     fullWidth
                     margin={'normal'}
-                    required
                     type={'text'}
                     InputLabelProps={{
                         shrink: true
@@ -59,8 +73,8 @@ export const AdressRegisterForm = () => {
                 />
                 <TextField
                     name={'neighbourhood'}
-                    //value={form.password}
-                    //onChange={onChange}
+                    value={form.neighbourhood}
+                    onChange={onChange}
                     label={'Bairro'}
                     placeholder={'Bairro'}
                     variant={'outlined'}
@@ -74,8 +88,8 @@ export const AdressRegisterForm = () => {
                 />
                 <TextField
                     name={'city'}
-                    //value={form.password}
-                    //onChange={onChange}
+                    value={form.city}
+                    onChange={onChange}
                     label={'Cidade'}
                     placeholder={'Cidade'}
                     variant={'outlined'}
@@ -89,8 +103,8 @@ export const AdressRegisterForm = () => {
                 />
                 <InputMask
                     mask="aa"
-                    //value={form.password}
-                    //onChange={onChange}
+                    value={form.state}
+                    onChange={onChange}
                 >
                     {() => <TextField
                     name={'state'}
@@ -114,7 +128,7 @@ export const AdressRegisterForm = () => {
                     color={'primary'}
                     margin={'normal'}
                 >
-                    {/*{ ? <CircularProgress color={'inherit'} size={24}/> : <>*/}Salvar
+                    {isLoading ? <CircularProgress color={'inherit'} size={24}/> : <>Criar</>}
                     </Button>
             </form>
         </InputContainer>
