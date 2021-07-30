@@ -5,10 +5,14 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import {DescriptionContainer, ContainerMain} from './Styled'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    marginTop: 10,
+    marginBottom: 10,
+    borderRadius: 8,
   },
   media: {
     height: 35,
@@ -17,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({restaurant}) {
   const classes = useStyles();
 
 
@@ -25,14 +29,21 @@ export default function RecipeReviewCard() {
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image="https://cdn.zeplin.io/5dd5ae92669af1bc817c8359/assets/5B7DD428-D8FF-48F8-B4CE-DE571F8E47E1.png"
+        image={restaurant && restaurant.logoUrl}
         title="Outback"
       />
       <CardContent>
-        <Typography variant="body2" color="quartenary.main" component="p">
-          Burguer Vila Madalena <br />
-          50-60m Frete ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀R$6,00
+        <Typography variant="body2" color="primary" component="p">
+          {restaurant && restaurant.name} 
         </Typography>
+        <DescriptionContainer>
+          <Typography variant="body2" color="secundary" component="i">
+            {restaurant && restaurant.deliveryTime} min
+          </Typography>
+          <Typography variant="body2" color="quartenary.main" component="i">
+            Frete R${restaurant && restaurant.shipping},00
+          </Typography>⠀⠀⠀⠀
+        </DescriptionContainer>⠀⠀⠀⠀⠀⠀⠀⠀
       </CardContent>
     </Card>
   );

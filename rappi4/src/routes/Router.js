@@ -10,6 +10,8 @@ import { ProfilePage } from '../pages/ProfilePage/ProfilePage'
 import { EditProfilePage } from '../pages/EditProfilePage/EditProfilePage'
 import { EditAdressPage } from '../pages/EditAdressPage/EditAdressPage'
 import { ErrorPage } from '../pages/ErrorPage/ErrorPage'
+import { useRequestData } from '../hooks/useRequestData'
+import { BASE_URL } from '../constants/urls'
 
 
 import { BrowserRouter, Switch, Route } from "react-router-dom"
@@ -17,6 +19,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 export const Router = () => {
 
+    const data = useRequestData([], `${BASE_URL}/restaurants`)
+    const restaurants = data && data.restaurants
 
     return (
         <BrowserRouter>
@@ -34,8 +38,7 @@ export const Router = () => {
                 </Route>
 
                 <Route exact path={"/"}>
-                    <FeedPage />
-                    
+                    <FeedPage restaurants={restaurants}/>
                 </Route>
 
                 <Route exact path={"/busca"}>
