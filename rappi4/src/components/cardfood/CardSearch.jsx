@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { ButtonCard, DescriptionContainer } from './Styled'
+import { ButtonCard, DescriptionContainer, TextContainer } from './Styled'
 import { useHistory, useParams } from 'react-router-dom';
 import { goToLoginPage, goToSignUpPage } from '../../routes/coordinates';
 
@@ -13,13 +13,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "90vw",
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 0,
     borderRadius: 8,
+    height: "65vw",
   },
   media: {
-    height: 35,
+    height: 10,
     width: "90vw",
-    paddingTop: '35%'
+    paddingTop: '50%'
   },
 }));
 
@@ -40,9 +41,11 @@ export default function RecipeReviewCard({ restaurant }) {
           title={restaurant && restaurant.name}
         />
         <CardContent>
-          <Typography variant="body2" color="primary" component="p">
-            {restaurant && restaurant.name}
-          </Typography>
+          <TextContainer>
+            <Typography variant="body2" color="primary" component="p">
+              {restaurant && restaurant.name}
+            </Typography>
+          </TextContainer>
           <DescriptionContainer>
             <Typography variant="body2" color="secundary" component="i">
               {restaurant && restaurant.deliveryTime} min
@@ -50,7 +53,7 @@ export default function RecipeReviewCard({ restaurant }) {
             <Typography variant="body2" color="secundary" component="i">
               Frete R${restaurant && restaurant.shipping},00
             </Typography>⠀⠀⠀⠀
-          </DescriptionContainer>⠀⠀⠀⠀⠀⠀⠀⠀
+          </DescriptionContainer>⠀⠀⠀
         </CardContent>
       </ButtonCard>
     </Card >

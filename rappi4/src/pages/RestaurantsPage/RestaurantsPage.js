@@ -4,7 +4,8 @@ import { BASE_URL } from '../../constants/urls'
 import useProtectedPage from '../../hooks/useProtected'
 import { useRequestData } from '../../hooks/useRequestData'
 import CardRestaurant from '../../components/cardrestaurant/CardRestaurant'
-import { MainContainer, HeaderContainer, TextP } from './styled'
+import { MainContainer, HeaderContainer, TextP, Border, TextBorder } from './styled'
+import CardProducts from '../../components/cardproducts/CardProducts'
 
 export const RestaurantsPage = () => {
     const params = useParams()
@@ -13,7 +14,26 @@ export const RestaurantsPage = () => {
 
     const restaurantDetails = data && data.restaurant
 
-    console.log(restaurantDetails)
+    const restaurantProducts = restaurantDetails && restaurantDetails.products
+
+    //const mainProducts = restaurantProducts && restaurantProducts.filter ((products) => {
+        //return (products.category === "Refeição")
+    //})
+
+    //const drinks = restaurantProducts && restaurantProducts.filter ((products) => {
+        //return (products.category === "Bebida")
+    //})
+
+    //const accompaniment = restaurantProducts && restaurantProducts.filter ((products) => {
+        //return (products.category === "Acompanhamento")
+    //})
+
+    const productsRender = restaurantProducts && restaurantProducts.filter((products) => {
+        return products
+    })
+
+    console.log(productsRender)
+    
 
     return (
         <MainContainer>
@@ -21,6 +41,24 @@ export const RestaurantsPage = () => {
                 <TextP>Restaurante</TextP>
             </HeaderContainer>
             <CardRestaurant restaurant={restaurantDetails}/>
+            <Border>
+                <TextBorder>Principais</TextBorder>
+            </Border>
+            {/*{mainProducts && mainProducts.map((products) => {
+                return (<CardProducts products={products}/>)
+            })}*/}
+            <Border>
+                <TextBorder>Bebidas</TextBorder>
+            </Border>
+            {/*{drinks && drinks.map((products) => {
+                return (<CardProducts products={products}/>)
+            })}
+            <Border>
+                <TextBorder>Acompanhamentos</TextBorder>
+            </Border>
+            {accompaniment && accompaniment.map((products) => {
+                return (<CardProducts products={products}/>)
+            })}*/}
         </MainContainer>
     )
 }
