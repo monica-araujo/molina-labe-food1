@@ -4,6 +4,7 @@ import { BASE_URL } from '../../constants/urls'
 import useProtectedPage from '../../hooks/useProtected'
 import { useRequestData } from '../../hooks/useRequestData'
 import CardRestaurant from '../../components/cardrestaurant/CardRestaurant'
+import { MainContainer, HeaderContainer, TextP } from './styled'
 
 export const RestaurantsPage = () => {
     const params = useParams()
@@ -15,8 +16,11 @@ export const RestaurantsPage = () => {
     console.log(restaurantDetails)
 
     return (
-        <div>
-         <CardRestaurant restaurant={restaurantDetails}/>
-        </div>
+        <MainContainer>
+            <HeaderContainer>
+                <TextP>Restaurante</TextP>
+            </HeaderContainer>
+            <CardRestaurant restaurant={restaurantDetails}/>
+        </MainContainer>
     )
 }

@@ -11,14 +11,14 @@ import { goToLoginPage, goToSignUpPage } from '../../routes/coordinates';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '95%',
+    width: "95vw",
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 8,
   },
   media: {
     height: 35,
-    width: 345,
+    width: "95vw",
     paddingTop: '35%'
   },
 }));
@@ -30,8 +30,6 @@ export default function RecipeReviewCard({ restaurant }) {
   const goToRestaurantsPage = () => {
     history.push(`/restaurante/${restaurant.id}`)
   }
-
-
 
   return (
     <Card className={classes.root}>
