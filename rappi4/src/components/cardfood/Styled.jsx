@@ -7,8 +7,15 @@ export const ButtonCard = styled.button`
 
 export const DescriptionContainer = styled.div`
     display: flex;
+    max-width: 160%;
     justify-content: space-between;
-    column-gap: 50px;
+    
 `
+export const TextContainer = styled.div`
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+`
+
 
 

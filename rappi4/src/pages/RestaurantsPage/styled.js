@@ -17,6 +17,19 @@ export const HeaderContainer = styled.div`
     justify-content: center;
 `
 
+export const TextBorder = styled.p`
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 5px;
+`
+export const Border = styled.div`
+    border-bottom: 1px solid black;
+    width: 90vw;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    
+`
 export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -36,3 +49,4 @@ export const TextP = styled.p`
     font-weight: 500;
     margin-bottom: 15px;
 `
+

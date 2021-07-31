@@ -5,21 +5,22 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { ButtonCard, DescriptionContainer } from './Styled'
+import { ButtonCard, DescriptionContainer, TextContainer } from './Styled'
 import { useHistory, useParams } from 'react-router-dom';
 import { goToLoginPage, goToSignUpPage } from '../../routes/coordinates';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '95%',
+    width: "90vw",
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 0,
     borderRadius: 8,
+    height: "20rem",
   },
   media: {
-    height: 35,
-    width: 345,
-    paddingTop: '35%'
+    height: 10,
+    width: "90vw",
+    paddingTop: '50%'
   },
 }));
 
@@ -31,31 +32,41 @@ export default function RecipeReviewCard({ restaurant }) {
     history.push(`/restaurante/${restaurant.id}`)
   }
 
-
-
   return (
-    <Card className={classes.root}>
-      <ButtonCard onClick={goToRestaurantsPage} >
-        <CardMedia
-          className={classes.media}
-          image={restaurant && restaurant.logoUrl}
-          title={restaurant && restaurant.name}
-        />
-        <CardContent>
-          <Typography variant="body2" color="primary" component="p">
-            {restaurant && restaurant.name}
-          </Typography>
-          <DescriptionContainer>
-            <Typography variant="body2" color="secundary" component="i">
-              {restaurant && restaurant.deliveryTime} min
-            </Typography>
-            <Typography variant="body2" color="secundary" component="i">
-              Frete R${restaurant && restaurant.shipping},00
-            </Typography>⠀⠀⠀⠀
-          </DescriptionContainer>⠀⠀⠀⠀⠀⠀⠀⠀
-        </CardContent>
-      </ButtonCard>
-    </Card >
+    <div>
+      <Card className={classes.root}>
+        <ButtonCard onClick={goToRestaurantsPage} >
+          <CardMedia
+            className={classes.media}
+            image={restaurant && restaurant.logoUrl}
+            title={restaurant && restaurant.name}
+          />
+          <CardContent>
+            <TextContainer>
+              <Typography variant="body2" color="primary" component="p">
+                {restaurant && restaurant.name}
+              </Typography>
+              <Typography variant="body2" color="secundary" component="p">
+                  {restaurant && restaurant.category} 
+              </Typography>
+            </TextContainer>
+            <DescriptionContainer>
+              <Typography variant="body2" color="secundary" component="i">
+                {restaurant && restaurant.shipping} min
+              </Typography>
+              <Typography variant="body2" color="secundary" component="i">
+                Frete R${restaurant && restaurant.shipping},00
+              </Typography>⠀⠀⠀⠀
+            </DescriptionContainer>⠀
+            <TextContainer>
+              <Typography variant="body2" color="secundary" component="i">
+                  {restaurant && restaurant.address}
+              </Typography>⠀
+            </TextContainer>⠀
+          </CardContent>
+        </ButtonCard>
+      </Card >
+    </div>
   );
 }
 
