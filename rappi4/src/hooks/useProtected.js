@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react"
 import { useHistory } from "react-router-dom"
-import { goToLogin } from "../routes/coordinates"
+import { goToLoginPage } from "../routes/coordinates"
 
 
 
@@ -9,7 +9,7 @@ const useProtectedPage = () => {
     useLayoutEffect(() => {
         const token = localStorage.getItem('token')
         if(!token){
-            goToLogin(history)
+            goToLoginPage(history)
         }
     },[history])
 }

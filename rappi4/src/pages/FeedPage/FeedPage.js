@@ -6,10 +6,15 @@ import homeVermelho from '../../assets/pagina-inicial-vermelho.png'
 import cart from '../../assets/shopping-cart.png'
 import profile from '../../assets/user.png'
 import RecipeReviewCard from '../../components/cardfood/CardSearch'
-import { BASE_URL } from '../../constants/urls';
-import { useRequestData } from '../../hooks/useRequestData';
+import useProtectedPage from '../../hooks/useProtected';
+import { useRequestData } from '../../hooks/useRequestData'
+import { BASE_URL } from '../../constants/urls'
 
-export const FeedPage = ({restaurants}) => {
+
+export const FeedPage = () => {
+    useProtectedPage()
+    const data = useRequestData([], `${BASE_URL}/restaurants`)
+    const restaurants = data && data.restaurants
 
     return (
         <MainContainer>

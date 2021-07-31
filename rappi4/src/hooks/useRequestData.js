@@ -6,21 +6,25 @@ export const useRequestData = (initialData, url) => {
 
     useEffect(() => {
         getRestaurants()
-    }, [initialData])
+    }, [])
 
     const getRestaurants = () => {
-        axios.get(url, {
-            headers: {
-                auth: localStorage.getItem('token')
-            }
-        })
-            .then((res) => {
-                setData(res.data)
-                
-            }).catch((err) => {
-                console.log(err)
-                alert('Ocorreu um erro =(')
+        const checkToken = localStorage.getItem('token')
+        if(checkToken){
+            axios.get(url, {
+                headers: {
+                    auth: localStorage.getItem('token')
+                }
             })
+                .then((res) => {
+                    setData(res.data)
+                    
+                }).catch((err) => {
+                    console.log(err)
+                    alert('Ocorreu um erro =(')
+                })
+        }
+        
     }
 
     return (data)

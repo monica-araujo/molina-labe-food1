@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
   height: 100%;
   margin: 0;
+  width: 100vw;
 }
 `
 

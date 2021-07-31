@@ -18,10 +18,10 @@ export const goToSearchPage = (history) => {
     history.push('./busca')
 }
 
-export const goToRestaurantsPage = (history) => {
-    history.push('./restaurante')
+/* export const goToRestaurantsPage = (history, id) => {
+    history.push(`./restaurante/${id}`)
 }
-
+ */
 export const goToCartPage = (history) => {
     history.push('./carrinho')
 }
