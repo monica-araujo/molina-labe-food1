@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../../constants/urls'
 import useProtectedPage from '../../hooks/useProtected'
@@ -16,23 +16,24 @@ export const RestaurantsPage = () => {
 
     const restaurantProducts = restaurantDetails && restaurantDetails.products
 
-    //const mainProducts = restaurantProducts && restaurantProducts.filter ((products) => {
-        //return (products.category === "Refeição")
-    //})
+    
 
-    //const drinks = restaurantProducts && restaurantProducts.filter ((products) => {
-        //return (products.category === "Bebida")
-    //})
-
-    //const accompaniment = restaurantProducts && restaurantProducts.filter ((products) => {
-        //return (products.category === "Acompanhamento")
-    //})
-
-    const productsRender = restaurantProducts && restaurantProducts.filter((products) => {
-        return products
+    /* let categoryProducts = restaurantProducts && restaurantProducts.map((item) => {
+        return item.category;
     })
 
-    console.log(productsRender)
+
+    let arrayProducts = {
+        category: {}
+    }; 
+  
+    categoryProducts && categoryProducts.forEach((t) => {
+        return arrayProducts.category[t] = restaurantProducts && restaurantProducts.filter((i)=>{
+        return i.category === t;
+    })
+    }) 
+
+    console.log(arrayProducts.category) */
     
 
     return (
@@ -40,16 +41,22 @@ export const RestaurantsPage = () => {
             <HeaderContainer>
                 <TextP>Restaurante</TextP>
             </HeaderContainer>
-            <CardRestaurant restaurant={restaurantDetails}/>
+            <CardRestaurant restaurant={restaurantDetails} />
             <Border>
                 <TextBorder>Principais</TextBorder>
             </Border>
-            {/*{mainProducts && mainProducts.map((products) => {
-                return (<CardProducts products={products}/>)
-            })}*/}
-            <Border>
+            {/* {arrayProducts && arrayProducts.category && arrayProducts.category.map(() => {
+                return <TextP>Restaurante</TextP>
+            })}   */}
+            
+            
+
+            {restaurantProducts && restaurantProducts.map((products) => {
+                return (<CardProducts products={products} key={products.id}/>)
+            })}
+            {/* <Border>
                 <TextBorder>Bebidas</TextBorder>
-            </Border>
+            </Border> */}
             {/*{drinks && drinks.map((products) => {
                 return (<CardProducts products={products}/>)
             })}
