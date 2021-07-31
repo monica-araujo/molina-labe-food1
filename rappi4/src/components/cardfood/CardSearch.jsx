@@ -11,14 +11,14 @@ import { goToLoginPage, goToSignUpPage } from '../../routes/coordinates';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "95vw",
+    width: "90vw",
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 8,
   },
   media: {
     height: 35,
-    width: "95vw",
+    width: "90vw",
     paddingTop: '35%'
   },
 }));

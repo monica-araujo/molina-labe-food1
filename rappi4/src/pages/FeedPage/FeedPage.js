@@ -1,6 +1,6 @@
 import { IconButton, Paper, InputBase, BottomNavigation, BottomNavigationAction } from '@material-ui/core'
 import React from 'react'
-import { MainContainer, TextP, InputContainer, MenuTab, HeaderContainer } from './styled'
+import { MainContainer, TextP, TextCategory, InputContainer, MenuTab, HeaderContainer, TypeContainer } from './styled'
 import SearchIcon from '@material-ui/icons/Search';
 import homeVermelho from '../../assets/pagina-inicial-vermelho.png'
 import cart from '../../assets/shopping-cart.png'
@@ -9,6 +9,7 @@ import RecipeReviewCard from '../../components/cardfood/CardSearch'
 import useProtectedPage from '../../hooks/useProtected';
 import { useRequestData } from '../../hooks/useRequestData'
 import { BASE_URL } from '../../constants/urls'
+
 
 
 export const FeedPage = () => {
@@ -37,6 +38,14 @@ export const FeedPage = () => {
                         placeholder="Restaurante"
                     />          
                 </Paper>
+                <TypeContainer>
+                    {restaurants && restaurants.map((restaurant) => {
+                    return (
+                    <TextCategory>
+                         {restaurant.category && restaurant.category}  
+                    </TextCategory> )    
+                    })}                    
+                </TypeContainer>
                 {restaurants && restaurants.map((restaurant, index) => {
                     return <RecipeReviewCard restaurant={restaurant} key={index}/>
                 })}

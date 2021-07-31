@@ -36,3 +36,20 @@ export const TextP = styled.p`
     font-weight: 500;
     margin-bottom: 15px;
 `
+
+export const TypeContainer = styled.div`
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center                                 ;
+`
+
+export const TextCategory = styled.button`
+    margin: 15px 30px 15px 20px;
+    background-color: transparent;
+    border: none;
+`
+
+
