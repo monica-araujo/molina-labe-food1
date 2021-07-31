@@ -4,6 +4,7 @@ import {MainContainer, SingUpButtonContainer, TextP, BackButton, BackIcon} from 
 import Button from '@material-ui/core/Button'
 import Logo from '../../assets/logo.png'
 import { useHistory } from 'react-router-dom'
+import { goToSignUpPage } from '../../routes/coordinates'
 
 export const LoginPage = () => {
     const history = useHistory()
@@ -15,7 +16,7 @@ export const LoginPage = () => {
             <LoginForm/>
             <SingUpButtonContainer>
                 <Button
-                    //onClick={() => goToSignUpPage(history)}
+                    onClick={() => goToSignUpPage(history)}
                     type={'submit'}
                     fullWidth
                     variant={'text'}
