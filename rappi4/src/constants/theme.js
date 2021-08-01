@@ -12,8 +12,8 @@ const theme = createTheme ({
             main: primaryColor,
             contrastText: '#000000',
         },
-        secundary: {
-            main: "b8b8b8",
+        secondary: {
+            main: secundaryColor,
             contrastText: secundaryColor
         },
         tertiary: {
