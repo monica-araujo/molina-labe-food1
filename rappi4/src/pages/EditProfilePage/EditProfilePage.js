@@ -4,6 +4,8 @@ import Back from "../../assets/back.png"
 import { EditProfileForm } from './EditProfileForm'
 
 export const EditProfilePage = () => {
+    
+
     return (
         <MainContainer>
             <HeaderContainer>

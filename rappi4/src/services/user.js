@@ -54,3 +54,21 @@ export const addressSignUP = (body, clear, history, setIsLoading) => {
         alert("Desculpe... Algum erro aconteceu revise os items e tente novamente")
     })
 }
+
+export const GetProfile = (setIsLoading) => {
+    setIsLoading(true)
+    const axiosConfig = {
+        headers: {
+            auth: localStorage.getItem("token")
+        }
+      }
+    axios
+        .get(`${BASE_URL}/profile`, axiosConfig)
+        .then((res) => {
+            console.log(res.data)
+            setIsLoading(false)
+        })
+        .catch((err) => {
+            alert("Desculpe... Algum erro aconteceu revise os items e tente novamente")
+        })
+    }

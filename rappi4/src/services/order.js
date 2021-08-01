@@ -17,7 +17,6 @@ export const postPlaceOrder = (body) => {
     .then((res) => {
         alert('Pedido realizado com sucesso!')
         return console.log(res.data)
-        alert("funfou")
     })
     .catch((err) => {
         alert(err.response.data.message)
