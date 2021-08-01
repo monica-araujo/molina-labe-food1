@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import Button from '@material-ui/core/Button';
 import { ButtonAdd, ButtonDiv } from './styled';
-import {postPlaceOrder} from '../../services/order'
+import { postPlaceOrder } from '../../services/order'
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -63,22 +62,21 @@ export default function RecipeReviewCard({ products }) {
 
   const handleClose = () => {
     setOpen(false)
-    props.onClick()
   }
 
   const onSubmitForm = (event) => {
     event.preventDefault()
 
     const body = {
-        products: [{
-            id: "",
-            quantity: 0
-        }],
-        paymentMethod: "",
+      products: [{
+        id: "",
+        quantity: 0
+      }],
+      paymentMethod: "",
     }
 
     postPlaceOrder(body)
-}
+  }
 
   return (
     <Card className={classes.root}>
@@ -104,47 +102,47 @@ export default function RecipeReviewCard({ products }) {
         </ButtonDiv>
       </CardContent>
       <div className='button'>
-                    <span>
-                        <Button>0</Button>
-                        <Dialog open={open} onClose={handleClose}>
-                            <DialogTitle>Selecione a quantidade desejada:</DialogTitle>
-                            <DialogContent>
-                                <form
-                                    onSubmit={onSubmitForm}
-                                    className={classes.container}>
-                                    <FormControl className={classes.formControl}>
-                                        <Select
-                                            native
-                                            id={props.id}
-                                            onChange={handleChange}
-                                            input={<Input id="demo-dialog-native"
-                                            />}
-                                            value={quantity}
-                                        >
-                                            <option aria-label="None" value="" />
-                                            <option value={1}>1</option>
-                                            <option value={2}>2</option>
-                                            <option value={3}>3</option>
-                                            <option value={4}>4</option>
-                                            <option value={5}>5</option>
-                                            <option value={6}>6</option>
-                                            <option value={7}>7</option>
-                                            <option value={8}>8</option>
-                                            <option value={9}>9</option>
-                                            <option value={10}>10</option>
-                                        </Select>
-                                        <Button  onClick={handleClose} color="primary">
-                                            Adicionar ao carrinho
-                                        </Button>
-                                    </FormControl>
-                                </form>
-                            </DialogContent>
-                        </Dialog>
-                    </span>
-                    <button onClick={handleClickOpen}>Adicionar</button>
-                </div>
+        <span>
+          <Button>0</Button>
+          <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Selecione a quantidade desejada:</DialogTitle>
+            <DialogContent>
+              <form
+                onSubmit={onSubmitForm}
+                className={classes.container}>
+                <FormControl className={classes.formControl}>
+                  <Select
+                    native
+                    id={products.id}
+                    onChange={handleChange}
+                    input={<Input id="demo-dialog-native"
+                    />}
+                    value={quantity}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
+                  </Select>
+                  <Button onClick={handleClose} color="primary">
+                    Adicionar ao carrinho
+                  </Button>
+                </FormControl>
+              </form>
+            </DialogContent>
+          </Dialog>
+        </span>
+        <button onClick={handleClickOpen}>Adicionar</button>
+      </div>
     </Card>
 
-    
+
   );
 }

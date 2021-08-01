@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../../constants/urls'
 import useProtectedPage from '../../hooks/useProtected'
@@ -7,6 +7,8 @@ import CardRestaurant from '../../components/cardrestaurant/CardRestaurant'
 import { MainContainer, HeaderContainer, Border, TextBorder, BackButton, BackIcon, TextP } from './styled'
 import CardProducts from '../../components/cardproducts/CardProducts'
 import Back from "../../assets/back.png"
+import { GlobalContext } from '../../global/GlobalContext'
+
 
 export const RestaurantsPage = () => {
     const params = useParams()
@@ -18,8 +20,8 @@ export const RestaurantsPage = () => {
     const restaurantProducts = restaurantDetails && restaurantDetails.products
 
     
-
-    {/*let categoryProducts = restaurantProducts && restaurantProducts.map((item) => {
+/* 
+    let categoryProducts = restaurantProducts && restaurantProducts.map((item) => {
         return item.category;
     })
 
@@ -34,8 +36,8 @@ export const RestaurantsPage = () => {
     })
     }) 
 
-    console.log(arrayProducts.category)*/}
-    
+    console.log(arrayProducts.category)
+ */    
 
     return (
         <MainContainer>
