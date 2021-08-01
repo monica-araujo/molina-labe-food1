@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { Router } from './routes/Router';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './constants/theme';
+import { GlobalStorage } from './global/GlobalContext';
 
 
 
@@ -22,7 +23,9 @@ const App = () => {
     <div >
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Router /> 
+        <GlobalStorage>
+          <Router /> 
+        </GlobalStorage>
       </ThemeProvider>
     </div>
   );
