@@ -9,9 +9,7 @@ export const postPlaceOrder = (restaurantID, body) => {
             auth: localStorage.getItem("token")
         }
       }
-
     
-   
     axios
     .post(`${BASE_URL}/restaurants/${restaurantID}/order`, body, axiosConfig)
     .then((res) => {

@@ -4,8 +4,9 @@ import { BASE_URL } from '../../constants/urls'
 import useProtectedPage from '../../hooks/useProtected'
 import { useRequestData } from '../../hooks/useRequestData'
 import CardRestaurant from '../../components/cardrestaurant/CardRestaurant'
-import { MainContainer, HeaderContainer, TextP, Border, TextBorder } from './styled'
+import { MainContainer, HeaderContainer, Border, TextBorder, BackButton, BackIcon, TextP } from './styled'
 import CardProducts from '../../components/cardproducts/CardProducts'
+import Back from "../../assets/back.png"
 
 export const RestaurantsPage = () => {
     const params = useParams()
@@ -18,7 +19,7 @@ export const RestaurantsPage = () => {
 
     
 
-    /* let categoryProducts = restaurantProducts && restaurantProducts.map((item) => {
+    {/*let categoryProducts = restaurantProducts && restaurantProducts.map((item) => {
         return item.category;
     })
 
@@ -33,19 +34,19 @@ export const RestaurantsPage = () => {
     })
     }) 
 
-    console.log(arrayProducts.category) */
+    console.log(arrayProducts.category)*/}
     
 
     return (
         <MainContainer>
             <HeaderContainer>
-                <TextP>Restaurante</TextP>
+                <BackButton><BackIcon src={Back}/></BackButton>
             </HeaderContainer>
             <CardRestaurant restaurant={restaurantDetails} />
             <Border>
-                <TextBorder>Principais</TextBorder>
+                <TextBorder>Produtos</TextBorder>
             </Border>
-            {/* {arrayProducts && arrayProducts.category && arrayProducts.category.map(() => {
+            {/* {arrayProducts && arrayProducts.category && arrayProducts.category.Bebida && arrayProducts.category.map(() => {
                 return <TextP>Restaurante</TextP>
             })}   */}
             
