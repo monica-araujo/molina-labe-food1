@@ -3,9 +3,9 @@ Um projeto inspirado no site rappi.
 
 
 
-## Site em produção:
+## Site em teste:
 
-rappimolina.surge.sh
+https://rappimolina.surge.sh/
 
 ### O que não funciona(em produção): 
 
