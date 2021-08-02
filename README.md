@@ -3,7 +3,7 @@ Um projeto inspirado no site rappi.
 
 
 
-## Site em teste:
+### Site em teste para mobile:
 
 https://rappimolina.surge.sh/
 
