@@ -9,11 +9,14 @@ import RecipeReviewCard from '../../components/cardfood/CardSearch'
 import useProtectedPage from '../../hooks/useProtected';
 import { useRequestData } from '../../hooks/useRequestData'
 import { BASE_URL } from '../../constants/urls'
+import { goToCartPage, goToFeed, goToProfilePage } from '../../routes/coordinates';
+import { useHistory } from 'react-router-dom';
 
 
 
 export const FeedPage = () => {
     useProtectedPage()
+    const history = useHistory()
     const data = useRequestData([], `${BASE_URL}/restaurants`)
     const restaurants = data && data.restaurants
 
@@ -53,9 +56,9 @@ export const FeedPage = () => {
                     <BottomNavigation
                         showLabels
                         >
-                        <BottomNavigationAction  icon={<img src={homeVermelho} alt="" />}/>
-                        <BottomNavigationAction  icon={<img src={cart} alt="" />}/>
-                        <BottomNavigationAction  icon={<img src={profile} alt="" />}/>
+                        <BottomNavigationAction onClick={() => goToFeed(history)} icon={<img src={homeVermelho} alt="" />}/>
+                        <BottomNavigationAction onClick={() => goToCartPage(history)} icon={<img src={cart} alt="" />}/>
+                        <BottomNavigationAction onClick={() => goToProfilePage(history)} icon={<img src={profile} alt="" />}/>
                     </BottomNavigation>
                 </MenuTab>
                 

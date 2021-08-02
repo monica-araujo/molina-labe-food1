@@ -1,21 +1,40 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {InputContainer} from './styled'
 import InputMask from 'react-input-mask'
+import { useHistory } from 'react-router-dom'
+import { GetProfile, putProfile } from '../../services/user'
+import useForm from '../../hooks/useForm'
+
 
 export const EditProfileForm = () => {
+    const history = useHistory()
+    const [ profile, setProfile ] = useState()
+    const oneProfile = profile && profile.user
+    const [form, onChange, clear] = useForm({name: '', email: '', cpf: '', password: ''})
+
+
+    useEffect(() => {
+        GetProfile(setProfile)
+    }, [])    
+
+
+    const onSubmitForm = (event) => {
+        event.preventDefault()
+        putProfile(form, clear, history)
+    }
 
     return (
         <InputContainer>
-            <form /*onSubmit={onSubmitForm}*/>
+            <form onSubmit={onSubmitForm}>
                 <TextField
                     name={'name'}
-                    //value={''}
-                    //onChange={onChange}
+                    value={form.name}
+                    onChange={onChange}
                     label={'Nome'}
-                    placeholder={'Nome e sobrenome'}
+                    placeholder={oneProfile.name}
                     variant={'outlined'}
                     fullWidth
                     margin={'normal'}
@@ -27,10 +46,10 @@ export const EditProfileForm = () => {
                 />
                 <TextField
                     name={'email'}
-                    //value={''}
-                    //onChange={onChange}
+                    value={form.email}
+                    onChange={onChange}
                     label={'E-mail'}
-                    placeholder={'email@email.com'}
+                    placeholder={oneProfile.email}
                     variant={'outlined'}
                     fullWidth
                     margin={'normal'}
@@ -42,13 +61,13 @@ export const EditProfileForm = () => {
                 />
                 <InputMask
                     mask="999.999.999-99"
-                    //value={form.password}
-                    //onChange={onChange}
+                    value={form.cpf}
+                    onChange={onChange}
                 >
                     {() => <TextField
                         name={'cpf'}
                         label={'CPF'}
-                        placeholder={'000.000.000-00'}
+                        placeholder={oneProfile.cpf}
                         variant={'outlined'}
                         fullWidth
                         margin={'normal'}

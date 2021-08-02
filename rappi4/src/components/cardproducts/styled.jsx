@@ -5,6 +5,14 @@ export const ButtonDiv = styled.div`
     position: relative;
     left: 55%;
     top: 15%;
+    display: flex;
+    flex-direction: column;
+`
+
+export const ButtonQuantity = styled.button`
+    position: relative;
+    bottom: 30px;
+    left: 90px;
 `
 
 export const ButtonAdd = styled.button`
