@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
   height: 100%;
   margin: 0;
 }
+  button {
+    background-color: transparent;
+    border: none;
+  }
 `
 
 const App = () => {
