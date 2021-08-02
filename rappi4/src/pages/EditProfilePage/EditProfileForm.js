@@ -34,7 +34,7 @@ export const EditProfileForm = () => {
                     value={form.name}
                     onChange={onChange}
                     label={'Nome'}
-                    placeholder={oneProfile.name}
+                    placeholder={oneProfile && oneProfile.name}
                     variant={'outlined'}
                     fullWidth
                     margin={'normal'}
@@ -49,7 +49,7 @@ export const EditProfileForm = () => {
                     value={form.email}
                     onChange={onChange}
                     label={'E-mail'}
-                    placeholder={oneProfile.email}
+                    placeholder={oneProfile && oneProfile.email}
                     variant={'outlined'}
                     fullWidth
                     margin={'normal'}
@@ -67,7 +67,7 @@ export const EditProfileForm = () => {
                     {() => <TextField
                         name={'cpf'}
                         label={'CPF'}
-                        placeholder={oneProfile.cpf}
+                        placeholder={oneProfile && oneProfile.cpf}
                         variant={'outlined'}
                         fullWidth
                         margin={'normal'}
