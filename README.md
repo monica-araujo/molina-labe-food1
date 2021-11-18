@@ -1,5 +1,5 @@
 ## Sejam bem vindos a Rappi4A!
-Um projeto inspirado no site rappi.
+Um projeto inspirado no Rappi.
 
 
 
@@ -29,3 +29,8 @@ https://rappimolina.surge.sh/
 ![image](https://user-images.githubusercontent.com/68256101/127800675-39af5a07-09ee-4e96-b7fc-eae5e3adf26d.png)
 ![image](https://user-images.githubusercontent.com/68256101/127800687-4b1a885a-3bbc-4215-a97d-fc680d30be58.png)
 
+### Desenvolvedores:
+- Felipe Souto
+- Mônica Araujo
+- Rafael Soares
+- Robson Silva
