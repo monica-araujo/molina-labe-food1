@@ -2,7 +2,6 @@
 Um projeto inspirado no Rappi.
 
 
-
 ### Site em teste para mobile:
 
 https://rappimolina.surge.sh/
